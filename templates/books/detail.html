@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book detail information</title>
+</head>
+<body>
+    <p>Title: {{ book.title }}</p>
+    <p>Authors:</p>
+    {% if book.authors.all %}
+        <ul>
+        {% for author in book.authors.all %}
+            <li>{{ author.first_name }}" "{{ author.last_name }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+<p>Publisher: {{ book.publisher }}</p>
+<p>Publication Date {{ book.publication_date }}</p>
+</body>
+</html>
