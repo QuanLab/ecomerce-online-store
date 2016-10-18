@@ -3,9 +3,14 @@
 {% load static %}
 
 {% block content %}
-    <div class="product_image">
+
+    <!-- blog set image for product presentation-->
+    <div class="product_image" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
         <img src="{% static "images/products/main/" %}{{ p.image }}" alt=" {{ p.name }}"/>
     </div>
+    <!-- end blog set image for product presentation-->
+
+    <!-- Description for our product-->
     <h1>{{ p.name }}</h1>
     Brand: <em>{{ p.brand }}</em>
     <br/><br/>
@@ -26,11 +31,20 @@
         Price: $ {{ p.price }}
     {% endif %}
     <br/><br/>
+    <!-- end of description for our product-->
+
+    <!--form for cart-->
     <form method="post" action="." class="cart">
+        {% csrf_token %}
         {{ form.as_p }}
-        <br/>
+        <label for="id_quantity">Quantity:</label> <input class="quantity" id="id_quantity" maxlength="5"
+                                                          name="quantity" size="2" type="text" value="1" required />
+        </br></br>
+        <input id="id_product_slug" name="product_slug" type="hidden" value="{{ p.slug }}" />
         <input type="submit" value="Add To Cart" name="submit" alt="Add To Cart"/>
     </form>
+    <!-- end of form for cart-->
+
     <div class="cb"></div>
     <br/><br/>
     <div class="cb"><br/><br/>
