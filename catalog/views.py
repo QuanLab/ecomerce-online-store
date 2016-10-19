@@ -11,7 +11,6 @@ from website import settings
 
 
 def custom_processor(request):
-    active_categories = Category.objects.filter(is_active=True)
     return {
         'app': 'catalog',
         'user': request.user,
@@ -19,7 +18,6 @@ def custom_processor(request):
         'site_name': settings.SITE_NAME,
         'meta_keywords': settings.META_KEYWORDS,
         'meta_description': settings.META_DESCRIPTION,
-        'active_categories': active_categories,
     }
 
 

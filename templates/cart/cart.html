@@ -9,7 +9,7 @@
         <tr>
             <th scope="col">Product</th>
             <th scope="col">Price</th>
-            <th scope="col">Quantity</th>
+            <th></th>
             <th></th>
             <th></th>
             <th scope="col" class="right">Total</th>
@@ -28,16 +28,18 @@
                     <td>{{ item.price|currency }}</td>
                     <td class="right">
                         <form method="post" action="." class="cart">
+                            {% csrf_token %}
                             <input type="text" name="quantity" value="{{ item.quantity }}" id="quantity"
                                    size="2" class="quantity" maxlength="5"/>
                             <input type="hidden" name="item_id" value="{{ item.id }}"/>
+                            <input type="submit" name="submit" value="Update"/>
                         </form>
                     </td>
                     <td>
-                        <input type="submit" name="submit" value="Update"/>
                     </td>
                     <td>
                         <form method="post" action="." class="cart">
+                            {% csrf_token %}
                             <input type="hidden" name="item_id" value="{{ item.id }}"/>
                             <input type="submit" name="submit" value="Remove"/>
                         </form>

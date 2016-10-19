@@ -8,5 +8,6 @@ urlpatterns = [
       url(r'^$', index),
       url(r'^books/', include('books.urls')),
       url(r'^catalog/', include('catalog.urls')),
-      url(r'^cart/', include('cart.urls'))
+      url(r'^cart/', include('cart.urls')),
+      url(r'^pages/', include('django.contrib.flatpages.urls')),
 ]

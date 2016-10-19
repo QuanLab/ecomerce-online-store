@@ -1,40 +1,47 @@
 {% extends "base.html" %}
 {% load catalog_tags %}
+
 {% block site_wrapper %}
     <div id="main">
         <a href="#content" class="skip_link">Skip to main content</a>
+
+        <!--Banner here-->
         <div id="banner">
             <div class="bannerIEPadder">
                 <div class="cart_box">
-                    {% cart_box request %}
+                    {% cart_box_tag request %}
                 </div>
                 Modern Musician
             </div>
         </div>
+
         <div id="navigation">
             <div class="navIEPadder">
                 {% include "tags/navigation.html" %}
             </div>
         </div>
+
         <div id="middle">
             <div id="sidebar">
                 <div class="sidebarIEPadder">
                     [search box here]
                     <br/>
-                    {% include "tags/category_list.html" %}
+                    {% category_list request.path %}
                 </div>
             </div>
             <div id="content">
-                <a name=”content”></a>
+                <a name="content"></a>
                 <div class="contentIEPadder">
                     {% block content %}
                     {% endblock %}
                 </div>
             </div>
         </div>
+
         <div id="footer">
             <div class="footerIEPadder">
-                Simple Footer
+                {% footer_links %}
+                <div class="cb"></div>
             </div>
         </div>
     </div>
