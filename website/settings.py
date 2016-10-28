@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'books',
     'catalog',
-    'cart'
+    'checkout',
+    'cart',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +137,4 @@ SITE_NAME = 'Modern Musician'
 
 META_KEYWORDS = 'Music, instruments, music accessories, musician supplies'
 META_DESCRIPTION = 'Modern Musician is an online supplier of instruments, sheet music, and other accessories for musicians'
+LOGIN_REDIRECT_URL = '/accounts/my_account/'

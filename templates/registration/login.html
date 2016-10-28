@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block site_wrapper %}
+  <h2>Login</h2>
+  <form method="post" action=".">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" value="submit">Login</button>
+  </form>
+{% endblock site_wrapper %}

@@ -10,4 +10,6 @@ urlpatterns = [
       url(r'^catalog/', include('catalog.urls')),
       url(r'^cart/', include('cart.urls')),
       url(r'^pages/', include('django.contrib.flatpages.urls')),
+      url(r'^accounts/', include('accounts.urls')),
+      url(r'^accounts/', include('django.contrib.auth.urls')),
 ]

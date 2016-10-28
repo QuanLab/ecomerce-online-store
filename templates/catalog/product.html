@@ -36,10 +36,7 @@
     <form method="post" action="." class="cart">
         {% csrf_token %}
         {{ form.as_p }}
-        <label for="id_quantity">Quantity:</label> <input class="quantity" id="id_quantity" maxlength="5"
-                                                          name="quantity" size="2" type="text" value="1" required />
-        </br></br>
-        <input id="id_product_slug" name="product_slug" type="hidden" value={{ p.slug }} />
+        <input id="id_product_slug" name="product_slug" type="hidden" value={{ p.slug }} /></br>
         <input type="submit" value="Add To Cart" name="submit" alt="Add To Cart"/>
     </form>
     <!-- end of form for cart-->

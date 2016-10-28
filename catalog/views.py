@@ -47,9 +47,9 @@ def show_product(request, product_slug):
     page_title = p.name
     meta_keywords = p.meta_keywords
     meta_description = p.meta_description
-
+    form = ProductAddToCartForm();
     context.update({'p': p, 'categories': categories, 'page_title': page_title, 'meta_keywords': meta_keywords,
-                    'meta_description': meta_description})
+                    'meta_description': meta_description, 'form': form})
 
     if request.method == 'POST':
         print "POST method from client!!!!"
